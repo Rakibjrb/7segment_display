@@ -1,0 +1,270 @@
+/* container setup part */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.main_container {
+  padding-bottom: 40px;
+  border-radius: 10px;
+}
+
+.container {
+  width: 1344px;
+  height: 450px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.hour,
+.miniute,
+.second {
+  width: 30%;
+  border-radius: 8px;
+  display: flex;
+  padding-top: 14px;
+}
+.hour .left,
+.miniute .left,
+.second .left {
+  flex: 1;
+  position: relative;
+}
+
+.hour .right,
+.miniute .right,
+.second .right {
+  flex: 1;
+  position: relative;
+}
+
+/* segment setup part */
+
+.segment {
+  background: #00ff00;
+  width: 120px;
+  height: 20px;
+}
+
+.segment1 {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.segment2 {
+  position: absolute;
+  top: 26%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.segment3 {
+  position: absolute;
+  top: 62%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.segment4 {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.segment5 {
+  position: absolute;
+  top: 62%;
+  left: -14%;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.segment6 {
+  position: absolute;
+  top: 26%;
+  left: -14%;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.segment7 {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+}
+
+.container .double_dot {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  transform: rotate(90deg);
+}
+
+.container .double_dot .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.container .double_dot_1 {
+  position: absolute;
+  top: 46%;
+  left: 27%;
+}
+.container .double_dot_2 {
+  position: absolute;
+  top: 46%;
+  left: 59%;
+}
+
+.main_container .other_info {
+  margin-top: -40px;
+  padding: 0 60px;
+}
+
+.main_container .other_info .info {
+  font-size: 50px;
+  color: #00ff00;
+  text-transform: uppercase;
+}
+
+/* css for apply on javascript condition */
+
+.segment_hide {
+  background: rgba(0, 255, 0, 0.3);
+}
+
+.green_dot {
+  background: #00ff00;
+}
+
+@media screen and (max-width: 1268px) {
+  .container {
+    width: 1010px;
+    height: 450px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .segment {
+    background: #00ff00;
+    width: 90px;
+    height: 20px;
+  }
+
+  .container .double_dot_1 {
+    position: absolute;
+    top: 46%;
+    left: 24%;
+  }
+  .container .double_dot_2 {
+    position: absolute;
+    top: 46%;
+    left: 56%;
+  }
+
+  .segment1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .segment2 {
+    position: absolute;
+    top: 26%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .segment3 {
+    position: absolute;
+    top: 57%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .segment4 {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .segment5 {
+    position: absolute;
+    top: 57%;
+    left: -14%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .segment6 {
+    position: absolute;
+    top: 26%;
+    left: -14%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .segment7 {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+  }
+
+  .segment_hide {
+    background: rgba(0, 255, 0, 0.3);
+  }
+}
