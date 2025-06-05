@@ -30,7 +30,7 @@ body {
 }
 
 .hour,
-.miniute,
+.minute,
 .second {
   width: 30%;
   border-radius: 8px;
@@ -38,14 +38,14 @@ body {
   padding-top: 14px;
 }
 .hour .left,
-.miniute .left,
+.minute .left,
 .second .left {
   flex: 1;
   position: relative;
 }
 
 .hour .right,
-.miniute .right,
+.minute .right,
 .second .right {
   flex: 1;
   position: relative;
