@@ -167,6 +167,10 @@ body {
   background: rgba(0, 255, 0, 0.3);
 }
 
+.dot {
+  background: rgba(0, 255, 0, 0.3);
+}
+
 .green_dot {
   background: #00ff00;
 }

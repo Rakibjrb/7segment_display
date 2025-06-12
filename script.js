@@ -1,5 +1,5 @@
 // element selctors
-const dots = document.querySelectorAll(".dot"),
+const dots = document.querySelectorAll(".green_dot"),
   date_display = document.querySelector(".info"),
   sec_right_segments = document.querySelectorAll(".second .right .segment"),
   sec_left_segments = document.querySelectorAll(".second .left .segment"),
@@ -9,62 +9,38 @@ const dots = document.querySelectorAll(".dot"),
   hour_left_segments = document.querySelectorAll(".hour .left .segment");
 
 //class add function
-const class_list_add = (element_name, class_name) => {
+function class_list_add(element_name, class_name) {
   element_name.classList.add(class_name);
-};
+}
 
 //class remove function
-const class_list_remove = (element_name, class_name) => {
+function class_list_remove(element_name, class_name) {
   element_name.classList.remove(class_name);
-};
+}
 
 // date formatter function
 function set_date() {
   const now = new Date();
-  const date = now.getDate() <= 9 ? `0${now.getDate()}` : now.getDate(),
-    month = now.getMonth() <= 9 ? `0${now.getMonth()}` : now.getMonth(),
-    year = now.getFullYear(),
-    date_format = `${date}/${month}/${year}`;
-  date_display.textContent = date_format;
+  const date = String(now.getDate()).padStart(2, "0");
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const year = now.getFullYear();
+  const date_format = `${date}/${month}/${year}`;
+
+  if (typeof date_display !== "undefined" && date_display !== null) {
+    date_display.textContent = date_format;
+  } else {
+    console.warn("date_display element is not defined.");
+  }
 }
 
 // get real time
 function get_real_time() {
   const now = new Date();
-  const sec = now.getSeconds() <= 9 ? `0${now.getSeconds()}` : now.getSeconds(),
-    min = now.getMinutes() <= 9 ? `0${now.getMinutes()}` : now.getMinutes();
+  const sec = String(now.getSeconds()).padStart(2, "0"),
+    min = String(now.getMinutes()).padStart(2, "0");
   const hour = () => {
-    if (now.getHours() == 0) {
-      set_date();
-      return 12;
-    }
-    if (now.getHours() <= 12) return now.getHours();
-    switch (now.getHours()) {
-      case 13:
-        return 1;
-      case 14:
-        return 2;
-      case 15:
-        return 3;
-      case 16:
-        return 4;
-      case 17:
-        return 5;
-      case 18:
-        return 6;
-      case 19:
-        return 7;
-      case 20:
-        return 8;
-      case 21:
-        return 9;
-      case 22:
-        return 10;
-      case 23:
-        return 11;
-      case 24:
-        return 12;
-    }
+    const hour = new Date().getHours();
+    return hour % 12 === 0 ? 12 : hour % 12;
   };
   return `${hour() <= 9 ? `0${hour()}` : hour()}${min}${sec}`;
 }
@@ -136,4 +112,14 @@ set_date();
 // main time handler function
 setInterval(() => {
   main_timer(get_real_time().split(""));
+
+  dots.forEach((dot) => {
+    class_list_add(dot, "green_dot");
+  });
+
+  setTimeout(() => {
+    dots.forEach((dot) => {
+      class_list_remove(dot, "green_dot");
+    });
+  }, 500);
 }, 1000);
